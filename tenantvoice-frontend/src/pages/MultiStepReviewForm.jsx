@@ -39,7 +39,6 @@ export default function ReviewFlow() {
       ))}
     </div>
 
-    {/* ✅ Navigation buttons go here */}
     <div className="review-navigation">
       <button className="back-button" onClick={handleBack}>
         ← Back
@@ -73,7 +72,6 @@ export default function ReviewFlow() {
       <div className="form-group">
         <label>Suggestion for owner</label>
         <input type="text" placeholder="What would you like to suggest to property owner" />
-            {/* ✅ Navigation buttons go here */}
     <div className="review-navigation">
       <button className="back-button" onClick={handleBack}>
         ← Back
