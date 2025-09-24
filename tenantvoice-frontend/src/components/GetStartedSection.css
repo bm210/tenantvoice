@@ -1,0 +1,71 @@
+.get-started-section {
+  background-color: #f5f7fa;
+  padding: 80px 60px;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+
+.get-started-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #121212;
+}
+
+
+.get-started-section h2 .highlight {
+  color: #178bfb;
+}
+
+.get-started-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.get-started-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.get-started-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  min-width: 300px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.get-started-card:hover {
+  transform: translateY(-4px);
+}
+
+.get-started-icon {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 130px;
+  height: auto
+}
+
+.get-started-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.get-started-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.get-started-link {
+  font-size: 15px;
+  color: #178bfb;
+  font-weight: 600;
+  text-decoration: none;
+}

@@ -1,0 +1,102 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9fb;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.login-card {
+  background-color: white;
+  padding: 40px 32px;
+  border-radius: 10px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.email-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.continue-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #0b6dbf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.create-account {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.create-account a {
+  color: #0b6dbf;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider span {
+  margin: 0 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+.social-buttons .social-button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background: white;
+  text-align: left;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
