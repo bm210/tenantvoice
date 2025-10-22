@@ -3,6 +3,7 @@ import "./AnonymousReviewSection.css";
 import magnifyingGlass from "../assets/Magnifying.png";
 import reviewIllustration from "../assets/anonymous_review.png";
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 
 
@@ -22,13 +23,18 @@ function AnonymousReviewPage() {
             placeholder="123 Random Australian Road, Wentworthville 2145"
           />
         </div>
+        <Link to="/review-form">
+        <button className="subscribe-button">Search</button>
+        </Link>
 
         <div className="empty-state">
           <p className="empty-title">Don’t have a review to share at the moment?</p>
           <p className="empty-subtext">
             Subscribe now to gain full access to reviews of property
           </p>
-          <button className="subscribe-button">Subscribe</button>
+        <Link to="/review-form">
+        <button className="subscribe-button">Subscribe</button>
+        </Link>
         </div>
 
         <div className="review-illustration">

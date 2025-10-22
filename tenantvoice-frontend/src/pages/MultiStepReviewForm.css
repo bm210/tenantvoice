@@ -1,3 +1,31 @@
+.progress-container {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.progress-label {
+  font-size: 24px;
+  color: #2b2b2b;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #1d8ef1;
+  transition: width 0.4s ease-in-out;
+}
+
+
 .review-step.step-1 {
   background-color: #f8f9ff;
   border-radius: 16px;
@@ -113,43 +141,48 @@
 
 
 .review-step.step-2 {
-  background-color: #fffef7;
-  padding: 32px;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
-}
-
-.step-2 .review-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  background-color: #f8f9ff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .step-2 .form-group {
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
 }
 
-.step-2 label {
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.step-2 input,
-.step-2 textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.step-2 .form-group label {
   font-size: 15px;
-  resize: none;
-  transition: border-color 0.2s ease;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
 }
 
-.step-2 input:focus,
-.step-2 textarea:focus {
-  border-color: #6666ff;
+.step-2 .form-group input,
+.step-2 .form-group textarea {
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+  font-family: inherit;
+  resize: none;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.step-2 .form-group input:focus,
+.step-2 .form-group textarea:focus {
+  border-color: #1d8ef1;
   outline: none;
+}
+
+.step-2 .form-group textarea {
+  height: 100px;
 }
 
 .step-2 .review-navigation {
@@ -192,3 +225,365 @@
 .step-2 .submit-button:hover {
   background-color: #0f7ce0;
 }
+
+.review-step.step-3 {
+  background-color: #f8f9ff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.step-3 h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 8px;
+}
+
+.step-3 p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.step-3 .review-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 25px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.step-3 .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-3 .form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2a2a2a;
+  margin-bottom: 6px;
+}
+
+.step-3 .form-group input[type="text"] {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+}
+
+.step-3 .recommendation-group {
+  background-color: #f3f3f3;
+  border-radius: 16px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.step-3 .recommendation-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.step-3 .radio-options {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.step-3 input[type="radio"] {
+  margin-right: 6px;
+}
+
+.step-3 .review-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.step-3 .back-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-3 .back-button:hover {
+  background-color: #d0d0d0;
+}
+
+.step-3 .submit-button {
+  background-color: #1d8ef1;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(29, 142, 241, 0.3);
+}
+
+.step-3 .submit-button:hover {
+  background-color: #0f7ce0;
+}
+
+.review-step.step-4 {
+  background-color: #f8f9ff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.step-4 .upload-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-4 h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a2a2a;
+}
+
+.step-4 .examples-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #333;
+}
+
+.step-4 .examples-list {
+  padding-left: 20px;
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.step-4 .upload-warning {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.step-4 .upload-controls {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.step-4 .drag-hint {
+  font-size: 14px;
+  color: #555;
+}
+
+.step-4 .upload-separator {
+  font-size: 14px;
+  color: #999;
+}
+
+.step-4 .upload-button {
+  background-color: #1d8ef1;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(29, 142, 241, 0.3);
+}
+
+.step-4 .upload-button:hover {
+  background-color: #0f7ce0;
+}
+
+.step-4 .review-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.step-4 .back-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-4 .back-button:hover {
+  background-color: #d0d0d0;
+}
+
+.step-4 .submit-button {
+  background-color: #1d8ef1;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(29, 142, 241, 0.3);
+}
+
+.step-4 .submit-button:hover {
+  background-color: #0f7ce0;
+}
+
+.review-step.step-5 {
+  background-color: #f8f9ff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.step-5 h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 12px;
+}
+
+.step-5 p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.step-5 .section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2a2a2a;
+}
+
+.step-5 form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.step-5 label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  margin-right: 24px;
+  margin-bottom: 10px;
+}
+
+.step-5 input[type="radio"],
+.step-5 input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #1d8ef1;
+}
+
+.step-5 input[type="text"] {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fafafa;
+}
+
+.step-5 .grouped-section {
+  background-color: #f9f9f9;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.step-5 .grouped-section p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.step-5 .review-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.step-5 .back-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-5 .back-button:hover {
+  background-color: #d0d0d0;
+}
+
+.step-5 .submit-button {
+  background-color: #1d8ef1;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(29, 142, 241, 0.3);
+}
+
+.step-5 .submit-button:hover {
+  background-color: #0f7ce0;
+}
+

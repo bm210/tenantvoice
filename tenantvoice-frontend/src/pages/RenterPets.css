@@ -1,0 +1,123 @@
+/* ===== Banner ===== */
+.pets-banner {
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 40px 0;
+}
+
+.pets-banner-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.breadcrumb {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.pets-banner-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ===== Main ===== */
+.pets-main {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 100px;
+  background: #f9fafb;
+}
+
+.pets-card {
+  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.pets-desc {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 32px;
+}
+
+/* ===== Pet Group ===== */
+.pets-group {
+  margin-bottom: 32px;
+}
+
+.pets-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* ===== Pet Options (buttons) ===== */
+.pet-options {
+  display: flex;
+  gap: 4px;
+}
+
+.pet-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111827;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pet-btn:hover {
+  background: #f3f4f6;
+}
+
+.pet-btn.active {
+  background: #374151;
+  color: #fff;
+  border-color: #374151;
+  font-weight: 600;
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  color: #111827;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.save-btn:hover {
+  background-color: #1d4ed8;
+}

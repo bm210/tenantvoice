@@ -13,7 +13,17 @@ export default function ReviewFlow() {
         <div className="progress" style={{ width: `${(step / 5) * 100}%` }} />
       </div>
 
-      <h3 className="review-address">123 Random Australian Road, Wentworthville 2145</h3>
+
+  <div className="progress-container">
+  <h3 className="progress-label">123 Random Australian Road, Wentworthville 2145</h3>
+  <div className="progress-bar">
+    <div
+      className="progress-fill"
+      style={{ width: `${(step / 5) * 100}%` }}
+    />
+  </div>
+</div>
+
 
 {step === 1 && (
   <section className="review-step step-1">
@@ -44,7 +54,7 @@ export default function ReviewFlow() {
         ← Back
       </button>
       <button className="submit-button" onClick={handleNext}>
-        Submit →
+        Next →
       </button>
     </div>
   </section>
@@ -72,18 +82,20 @@ export default function ReviewFlow() {
       <div className="form-group">
         <label>Suggestion for owner</label>
         <input type="text" placeholder="What would you like to suggest to property owner" />
-    <div className="review-navigation">
-      <button className="back-button" onClick={handleBack}>
-        ← Back
-      </button>
-      <button className="submit-button" onClick={handleNext}>
-        Submit →
-      </button>
-    </div>
+      </div>
+
+      <div className="review-navigation">
+        <button type="button" className="back-button" onClick={handleBack}>
+          ← Back
+        </button>
+        <button type="button" className="submit-button" onClick={handleNext}>
+          Next →
+        </button>
       </div>
     </form>
   </section>
 )}
+
 
 
 {step === 3 && (
@@ -93,41 +105,99 @@ export default function ReviewFlow() {
       Financial data related to the property is not public information. We use this to determine the rate/percentage in which the landlord raises the rent of the property.
     </p>
 
-    <div className="review-box">
-      {[...Array(4)].map((_, idx) => (
-        <div key={`pricing-${idx}`} className="form-group">
+    <form className="review-form">
+      {/* Block 1 */}
+      <div className="review-box">
+        <div className="form-group">
           <label>Title of Review</label>
           <input type="text" placeholder="Title of review" />
         </div>
-      ))}
+      </div>
 
-      <div className="form-group recommend-group">
-        <p>Would you recommend this property to someone?</p>
-        <div className="radio-options">
-          <label>
-            <input type="radio" name="recommend" value="yes" /> Yes
-          </label>
-          <label>
-            <input type="radio" name="recommend" value="no" /> No
-          </label>
+      {/* Block 2 */}
+      <div className="review-box">
+        <div className="form-group">
+          <label>Title of Review</label>
+          <input type="text" placeholder="Title of review" />
         </div>
       </div>
 
-      <div className="form-group">
-        <label>Additional Comments</label>
-        <input type="text" placeholder="Any final thoughts?" />
+      {/* Block 3 */}
+      <div className="review-box">
+        <div className="form-group">
+          <label>Title of Review</label>
+          <input type="text" placeholder="Title of review" />
+        </div>
       </div>
-    </div>
+
+      {/* Block 4 */}
+      <div className="review-box">
+        <div className="form-group">
+          <label>Title of Review</label>
+          <input type="text" placeholder="Title of review" />
+        </div>
+      </div>
+
+      {/* Block 5 */}
+        <div className="recommendation-group">
+          <label>Would you recommend this property to someone?</label>
+          <div className="radio-options">
+            <label><input type="radio" name="recommend5" /> Yes</label>
+            <label><input type="radio" name="recommend5" /> No</label>
+          </div>
+        </div>
+
+      {/* Block 6 */}
+        <div className="recommendation-group">
+          <label>Would you recommend this property to someone?</label>
+          <div className="radio-options">
+            <label><input type="radio" name="recommend5" /> Yes</label>
+            <label><input type="radio" name="recommend5" /> No</label>
+          </div>
+        </div>
+
+      {/* Block 7 */}
+      <div className="review-box">
+        <div className="form-group">
+          <label>Title of Review</label>
+          <input type="text" placeholder="Title of review" />
+        </div>
+      </div>
+
+      {/* Block 8 */}
+        <div className="recommendation-group">
+          <label>Would you recommend this property to someone?</label>
+          <div className="radio-options">
+            <label><input type="radio" name="recommend5" /> Yes</label>
+            <label><input type="radio" name="recommend5" /> No</label>
+          </div>
+        </div>
+
+      {/* Block 9 */}
+      <div className="review-box">
+        <div className="form-group">
+          <label>Title of Review</label>
+          <input type="text" placeholder="Title of review" />
+        </div>
+      </div>
+
+      <div className="review-navigation">
+        <button className="back-button" onClick={handleBack}>← Back</button>
+        <button className="submit-button" onClick={handleNext}>Next →</button>
+      </div>
+    </form>
   </section>
 )}
 
-{step === 4 && (
-  <section className="review-step">
-    <h2>Photos (optional)</h2>
 
+
+{step === 4 && (
+  <section className="review-step step-4">
     <div className="upload-box">
-      <p>Some examples include:</p>
-      <ul>
+      <h2>Photos (optional)</h2>
+
+      <p className="examples-label">Some examples include:</p>
+      <ul className="examples-list">
         <li>copy of your rental history</li>
         <li>Photos of your apartment or building</li>
         <li>examples of your landlord/tenant correspondence</li>
@@ -135,26 +205,37 @@ export default function ReviewFlow() {
         <li>inspection reports (if applicable)</li>
       </ul>
 
-      <p>
-        Please note that any photos you share will be published and attached to your review.<br />
-        <strong>
-          Please remove or black out any identifiers that you do not want to be share
-        </strong>
+      <p className="upload-warning">
+        Please note that any photos you share will be published and attached to your review.
+        <br />
+        <strong>Please remove or black out any identifiers that you do not want to be share</strong>
       </p>
 
       <div className="upload-controls">
-        <input type="file" multiple />
-        <p>or</p>
-        <button type="button">upload photos</button>
+        <span className="drag-hint">Drag and drop files to upload</span>
+        <span className="upload-separator">or</span>
+        <button type="button" className="upload-button">upload photos</button>
+        <input type="file" multiple hidden />
       </div>
+    </div>
+
+    <div className="review-navigation">
+      <button className="back-button" onClick={handleBack}>
+        ← Back
+      </button>
+      <button className="submit-button" onClick={handleNext}>
+        Next →
+      </button>
     </div>
   </section>
 )}
 
+
+
 {step === 5 && (
-  <section className="review-step">
+  <section className="review-step step-5">
     <h2>Demographic Info</h2>
-    <p>
+    <p className="step-description">
       TenantVoice is committed to advocating for fair and inclusive renting
       experiences. By sharing optional details about your background—such as
       age, gender, race, or immigration status—you can help us uncover trends
@@ -166,23 +247,23 @@ export default function ReviewFlow() {
       <p className="section-title">
         Please indicate your ethnic and racial group you identify with?
       </p>
-      <div>
+      <div className="input-group">
         <label><input type="checkbox" name="ethnic-group" /> Aboriginal or Torres Strait Islander</label>
         <label><input type="checkbox" name="ethnic-group" /> Asian/Indian</label>
         <label><input type="checkbox" name="ethnic-group" /> Pacific Islander</label>
         <label><input type="checkbox" name="ethnic-group" /> White</label>
-        <input type="text" placeholder="Other?" />
+        <input type="text" placeholder="Other?" className="text-input" />
       </div>
 
       <p className="section-title">Gender</p>
-      <div>
+      <div className="input-group">
         <label><input type="radio" name="gender" /> Male</label>
         <label><input type="radio" name="gender" /> Female</label>
         <label><input type="radio" name="gender" /> Non-Binary</label>
       </div>
 
       <p className="section-title">What is your date of birth?</p>
-      <input type="text" placeholder="DD/MM/YYYY" />
+      <input type="text" placeholder="DD/MM/YYYY" className="text-input" />
 
       <div className="grouped-section">
         <p>Are you an Australian/New Zealand Citizen?</p>
@@ -196,16 +277,16 @@ export default function ReviewFlow() {
         <label><input type="radio" name="disability" /> No</label>
       </div>
     </form>
-  </section>
-)}
 
-{step === 6 && (
-  <div className="form-navigation">
-    <button onClick={handleBack} className="back-button"> 
-      ← Back
-    </button>
-    <button className="submit-button">Submit →</button>
-  </div>
+    <div className="review-navigation">
+      <button className="back-button" onClick={handleBack}>
+        ← Back
+      </button>
+      <button className="submit-button" onClick={handleNext}>
+        Submit →
+      </button>
+    </div>
+  </section>
 )}
 
     </div>

@@ -22,7 +22,7 @@ function Header() {
           </select>
         </div>
         <Link to="/login" className="login-link">Login</Link>
-        <Link to="/signup-tenant" className="signup-button">Sign up</Link>
+        <Link to="/join-tenant" className="signup-button">Sign up</Link>
       </div>
     </header>
   );

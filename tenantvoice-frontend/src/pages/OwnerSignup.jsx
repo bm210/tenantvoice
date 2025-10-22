@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './TenantSignup.css';
 import logo from '../assets/tenantvoice-logo.png';
 import googleLogo from '../assets/google-logo.png';
@@ -65,7 +66,7 @@ function OwnerSignup() {
                       <a href="/login"> Sign in</a>
                   </div>
 
-                  <button className="signup-btn">Create my account</button>
+                  <Link to="/state-selection"><button className="signup-btn">Create my account</button></Link>
               </form>
           </div></>
   );

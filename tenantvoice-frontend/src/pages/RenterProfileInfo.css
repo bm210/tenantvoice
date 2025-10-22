@@ -1,0 +1,195 @@
+/* ===== RENTER PROFILE MAIN LAYOUT ===== */
+.rpi-main {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 40px 0 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.rpi-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: 80px;
+  align-items: flex-start;
+  background: transparent;
+}
+
+.back-link {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 14px;
+  text-decoration: none;
+  margin-left: 80px;
+  margin-bottom: 24px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== LEFT SECTION ===== */
+.rpi-left {
+  flex: 2;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 48px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.rpi-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.rpi-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* ===== SECTION TITLES ===== */
+.rpi-section {
+  margin-bottom: 36px;
+}
+
+.rpi-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.rpi-hint {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* ===== BOX STYLE ===== */
+.rpi-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.rpi-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #fff;
+  font-size: 15px;
+  color: #111827;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.15s ease;
+}
+
+.rpi-item:last-child {
+  border-bottom: none;
+}
+
+.rpi-item:hover {
+  background: #f9fafb;
+}
+
+.rpi-item span {
+  font-size: 18px;
+  color: #9ca3af;
+  transition: transform 0.2s ease;
+}
+
+.rpi-item:hover span {
+  transform: translateX(3px);
+}
+
+
+/* ===== RIGHT COLUMN ===== */
+.rpi-right {
+  flex: 1;
+  position: sticky;
+  top: 40px;
+}
+
+.rpi-help-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.rpi-help-box h3 {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.rpi-help-box a {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.rpi-help-box a:hover {
+  text-decoration: underline;
+}
+
+.rpi-help-text {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  .rpi-container {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .rpi-left {
+    padding: 30px 24px;
+  }
+
+  .rpi-right {
+    position: static;
+  }
+}
+
+
+/* ===== Footer ===== */
+.tv-footer {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 60px 80px 30px;
+}
+
+.tv-footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.tv-footer-links {
+  margin-left: auto;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
