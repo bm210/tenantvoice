@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv
+.venv/
+
+# Environment variables
+.env
+
+# Instance Folder
+instance/
+
+# Log files
+*.log
+nohup.out
+
+# Other
+cookies.txt
