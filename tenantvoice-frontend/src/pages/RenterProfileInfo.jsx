@@ -72,7 +72,6 @@ function RenterProfileInfo() {
             </section>
           </div>
 
-          {/* Right Column */}
           <div className="rpi-right">
             <div className="rpi-help-box">
               <h3>Manage applications</h3>
@@ -87,7 +86,6 @@ function RenterProfileInfo() {
         </div>
       </main>
 
-      {/* ===== Footer ===== */}
       <footer className="tv-footer">
   <div className="tv-footer-content">
     <div className="tv-footer-left">

@@ -8,7 +8,6 @@ function RenterUtilityConnection() {
   const [consent, setConsent] = useState(null);
 
   const handleSave = () => {
-    // Placeholder for save logic
     navigate("/renter-profile-info");
   };
 

@@ -14,7 +14,6 @@ function RenterAboutMe() {
   };
 
   const handleSave = () => {
-    // Handle save logic (placeholder)
     navigate("/renter-profile-info");
   };
 

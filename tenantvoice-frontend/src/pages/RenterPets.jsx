@@ -6,7 +6,6 @@ import logo from "../assets/tenantvoice-logo.png";
 function RenterPets() {
   const navigate = useNavigate();
 
-  // state for pet counts
   const [pets, setPets] = useState({
     dogs: 0,
     cats: 0,
@@ -18,7 +17,6 @@ function RenterPets() {
   };
 
   const handleSave = () => {
-    // Placeholder for save logic
     navigate("/renter-profile-info");
   };
 

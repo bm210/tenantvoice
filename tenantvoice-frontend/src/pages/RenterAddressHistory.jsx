@@ -8,7 +8,6 @@ function RenterAddressHistory() {
   const navigate = useNavigate();
 
   const handleSave = () => {
-    // Placeholder for save logic
     navigate("/renter-profile-info");
   };
 

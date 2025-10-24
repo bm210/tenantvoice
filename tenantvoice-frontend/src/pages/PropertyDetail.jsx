@@ -8,19 +8,10 @@ import carIcon from '../assets/icon3.png';
 import propertySample from '../assets/property-sample.jpg';
 import agentProfile from '../assets/agent-profile.png';
 
-/**
- * A full page view for a rental listing. This component follows the same
- * typography, colour palette and spacing rules as the rest of the TenantVoice
- * components. It is organised into several sections: a header with the
- * property address and photo gallery, a content area with a long form
- * description and feature list, a call‑to‑action card for contacting the
- * agent, an nbn® availability section and a final map section.  All
- * measurements, colours and fonts are defined in the accompanying CSS file.
- */
+
 function PropertyDetail() {
   return (
     <div className="property-page">
-      {/* Top navigation bar consistent with the rest of the site */}
       <header className="property-header-bar">
         <img src={logo} alt="TenantVoice logo" className="property-logo" />
         <div className="property-auth">
@@ -29,9 +20,7 @@ function PropertyDetail() {
         </div>
       </header>
 
-      {/* Main container for the listing */}
       <main className="property-container">
-        {/* Introductory section with address, specs and photos */}
         <section className="property-intro">
           <div className="intro-info">
             <h1 className="property-address">123 Random Street, Wentworthville, NSW 2145</h1>
@@ -64,7 +53,6 @@ function PropertyDetail() {
           </div>
         </section>
 
-        {/* Body split into description and contact card */}
         <section className="property-body">
           <article className="property-description">
             <h2 className="section-title">Spacious Two Bedroom Apartment in the Heart of Wentworthville</h2>
@@ -109,7 +97,6 @@ function PropertyDetail() {
           </aside>
         </section>
 
-        {/* nbn availability section */}
         <section className="nbn-section">
           <h2 className="section-title">nbn® availability</h2>
           <div className="nbn-cards">
@@ -124,7 +111,6 @@ function PropertyDetail() {
           </div>
         </section>
 
-        {/* Map and affordability section */}
         <section className="affordability-section">
           <h2 className="section-title">Can you afford this property?</h2>
           <p className="section-paragraph">

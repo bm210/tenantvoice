@@ -9,7 +9,6 @@ function RenterEmploymentInfo() {
   const navigate = useNavigate();
 
   const handleSave = () => {
-    // Save logic (placeholder)
     navigate("/renter-profile-info");
   };
 

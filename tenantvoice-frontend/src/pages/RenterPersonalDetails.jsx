@@ -20,7 +20,6 @@ function RenterPersonalDetails() {
   };
 
   const handleSave = () => {
-    // Placeholder save logic
     navigate("/renter-profile-info");
   };
 
