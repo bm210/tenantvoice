@@ -6,3 +6,4 @@ Flask-JWT-Extended
 requests
 pytest
 pytest-flask
+gunicorn
