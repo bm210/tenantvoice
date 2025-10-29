@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 from flask_login import LoginManager
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
+
+# Import models and routes
 from services.users.models import db, User
 from services.users.profiles import TenantProfile, LandlordProfile, ServiceProviderProfile
 from services.users.routes import users_bp
@@ -22,31 +24,39 @@ from services.audit.routes import audit_bp
 from services.audit.models import AuditLog
 from services.recommendations.routes import recommendations_bp
 
+
 def create_app():
     app = Flask(__name__)
-    load_dotenv()
+    load_dotenv()  # Load environment variables from .env
 
-    # Security / config
+    # -------------------------
+    # 🔐 CONFIGURATION
+    # -------------------------
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'a_default_secret_key')
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET_KEY', 'super-secret') # Change this!
+    app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET_KEY', 'super-secret')
 
-    # CORS configuration - read allowed origins from environment variable (comma-separated).
+    # -------------------------
+    # 🌍 CORS CONFIGURATION
+    # -------------------------
     allowed_origins = os.environ.get(
         "CORS_ORIGINS",
-        "https://tenantvoice1-k8b096uul-k-n-23s-projects.vercel.app"
+        "https://tenantvoice1-k8b096uul-k-n-23s-projects.vercel.app,http://localhost:3000"
     )
-    allowed_origins = [o.strip() for o in allowed_origins.split(",") if o.strip()]
 
-    # Apply CORS to API routes only, allow credentials and specific methods
+    allowed_origins = [origin.strip() for origin in allowed_origins.split(",") if origin.strip()]
+
     CORS(
         app,
         resources={r"/api/*": {"origins": allowed_origins}},
         supports_credentials=True,
-        methods=["GET", "POST", "PUT", "DELETE"]
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     )
 
+    # -------------------------
+    # 🔧 INITIALIZE EXTENSIONS
+    # -------------------------
     jwt = JWTManager(app)
     db.init_app(app)
     login_manager = LoginManager()
@@ -56,6 +66,9 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
+    # -------------------------
+    # 🔗 REGISTER BLUEPRINTS
+    # -------------------------
     app.register_blueprint(users_bp, url_prefix='/api')
     app.register_blueprint(profile_bp, url_prefix='/api')
     app.register_blueprint(properties_bp, url_prefix='/api')
@@ -68,11 +81,18 @@ def create_app():
     app.register_blueprint(audit_bp, url_prefix='/api')
     app.register_blueprint(recommendations_bp, url_prefix='/api')
 
+    # -------------------------
+    # 🧱 DATABASE SETUP
+    # -------------------------
     with app.app_context():
         db.create_all()
 
     return app
 
+
+# -------------------------
+# 🚀 RUN THE APP (LOCAL)
+# -------------------------
 if __name__ == "__main__":
     app = create_app()
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
