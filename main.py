@@ -3,6 +3,7 @@ from flask import Flask
 from dotenv import load_dotenv
 from flask_login import LoginManager
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 from services.users.models import db, User
 from services.users.profiles import TenantProfile, LandlordProfile, ServiceProviderProfile
 from services.users.routes import users_bp
@@ -25,10 +26,26 @@ def create_app():
     app = Flask(__name__)
     load_dotenv()
 
+    # Security / config
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'a_default_secret_key')
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET_KEY', 'super-secret') # Change this!
+
+    # CORS configuration - read allowed origins from environment variable (comma-separated).
+    allowed_origins = os.environ.get(
+        "CORS_ORIGINS",
+        "https://tenantvoice1-k8b096uul-k-n-23s-projects.vercel.app"
+    )
+    allowed_origins = [o.strip() for o in allowed_origins.split(",") if o.strip()]
+
+    # Apply CORS to API routes only, allow credentials and specific methods
+    CORS(
+        app,
+        resources={r"/api/*": {"origins": allowed_origins}},
+        supports_credentials=True,
+        methods=["GET", "POST", "PUT", "DELETE"]
+    )
 
     jwt = JWTManager(app)
     db.init_app(app)
