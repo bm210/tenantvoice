@@ -7,3 +7,4 @@ requests
 pytest
 pytest-flask
 gunicorn
+flask-cors
