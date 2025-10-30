@@ -40,18 +40,21 @@ def create_app():
     # -------------------------
     # 🌍 CORS CONFIGURATION
     # -------------------------
-    allowed_origins = os.environ.get(
-        "CORS_ORIGINS",
-        "https://tenantvoice1-k8b096uul-k-n-23s-projects.vercel.app,http://localhost:3000"
-    )
+    # 🌍 CORS CONFIGURATION
+allowed_origins = os.environ.get(
+    "CORS_ORIGINS",
+    "https://tenantvoice-front.onrender.com,http://localhost:3000"
+)
 
-    allowed_origins = [origin.strip() for origin in allowed_origins.split(",") if origin.strip()]
+allowed_origins = [origin.strip() for origin in allowed_origins.split(",") if origin.strip()]
 
-    CORS(
-        app,
-        resources={r"/api/*": {"origins": allowed_origins}},
-        supports_credentials=True,
-        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+CORS(
+    app,
+    resources={r"/api/*": {"origins": allowed_origins}},
+    supports_credentials=True,
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+)
+
     )
 
     # -------------------------
