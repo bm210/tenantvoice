@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, jsonify
 from dotenv import load_dotenv
 from flask_login import LoginManager
 from flask_jwt_extended import JWTManager
@@ -24,7 +24,6 @@ from services.audit.routes import audit_bp
 from services.audit.models import AuditLog
 from services.recommendations.routes import recommendations_bp
 
-
 def create_app():
     app = Flask(__name__)
     load_dotenv()  # Load environment variables from .env
@@ -44,7 +43,6 @@ def create_app():
         "CORS_ORIGINS",
         "https://tenantvoice-front.onrender.com,http://localhost:3000"
     )
-
     allowed_origins = [origin.strip() for origin in allowed_origins.split(",") if origin.strip()]
 
     CORS(
@@ -82,6 +80,13 @@ def create_app():
     app.register_blueprint(recommendations_bp, url_prefix='/api')
 
     # -------------------------
+    # 🏠 ROOT ROUTE
+    # -------------------------
+    @app.route("/")
+    def home():
+        return jsonify({"message": "TenantVoice API is running!"})
+
+    # -------------------------
     # 🧱 DATABASE SETUP
     # -------------------------
     with app.app_context():
@@ -89,10 +94,10 @@ def create_app():
 
     return app
 
-
 # -------------------------
 # 🚀 RUN THE APP (LOCAL)
 # -------------------------
 if __name__ == "__main__":
     app = create_app()
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
+
